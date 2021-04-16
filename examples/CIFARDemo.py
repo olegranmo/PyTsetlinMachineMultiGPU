@@ -47,9 +47,6 @@ for X_batch, Y_batch in datagen.flow(X_train, Y_train, batch_size=10000):
                 for j in range(X_batch.shape[3]):
                         X_batch[i,:,:,j] = cv2.adaptiveThreshold(X_batch[i,:,:,j], 1, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 11, 2) #cv2.adaptiveThreshold(X_train[i,:,:,j], 1, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 5, 5)
 
-                print(X_batch[i,:,:,:].shape)
-
-
         start_training = time()
         tm.fit(X_batch, Y_batch, epochs=1, incremental=True)
         stop_training = time()
