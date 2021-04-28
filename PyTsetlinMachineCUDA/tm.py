@@ -188,7 +188,7 @@ class CommonTsetlinMachine():
 	def set_state(self, state):
 		self.number_of_classes = state[2]
 		self.number_of_clauses = state[3]
-		self.number_of_clauses_multi = self.number_of_clauses/self.number_of_gpus
+		self.number_of_clauses_multi = int(self.number_of_clauses // self.number_of_gpus)
 		self.number_of_features = state[4]
 		self.dim = state[5]
 		self.patch_dim = state[6]
